@@ -27,3 +27,8 @@ Open the URL shown by Vite, normally `http://localhost:5173`.
 
 ## Demo admin
 Register a user, then in MongoDB change that user's `role` from `user` to `admin`. The admin dashboard will then allow event creation, editing and deletion.
+
+## Author
+VICTOR MUCHIRI
+
+
