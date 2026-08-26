@@ -65,18 +65,23 @@ function Registrations() {
             className="registration"
             key={r._id}
           >
-            <div>
-              <h3>{r.event?.title}</h3>
+           
+           <div>
+  <h3>{r.event?.title}</h3>
 
-              <p className="muted">
-                {r.event?.location}
-                {" · "}
-                {r.event &&
-                  new Date(
-                    r.event.date
-                  ).toLocaleDateString()}
-              </p>
-            </div>
+  <p className="muted">
+    {r.event?.location} ·{" "}
+    {r.event &&
+      new Date(r.event.date).toLocaleDateString()}
+  </p>
+
+  <p className="muted">
+    Registration Code:{" "}
+    <strong>
+      {r.registrationCode || "NO CODE"}
+    </strong>
+  </p>
+</div>
 
             <div>
               <span
