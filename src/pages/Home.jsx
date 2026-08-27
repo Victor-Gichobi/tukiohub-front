@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import heroImage from "../public/tukio-hub.png";
+
 
 function Home() {
   const rows = [
@@ -11,6 +13,13 @@ function Home() {
 
   return (
     <section className="hero">
+<div className="hero-image">
+  <img src={heroImage} alt="Tukio Hub" />
+</div>
+
+
+
+
       <div>
         <span className="eyebrow">
           BRINGING EVENTS AND PEOPLE TOGETHER
