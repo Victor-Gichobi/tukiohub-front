@@ -1,24 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import heroImage from "../public/tukio-hub.png";
+import loggedInImage from "../public/tukio-hub-icon.svg";
 
+function Home({ user }) {
 
-function Home() {
+  
   const rows = [
-    { code: "TC", label: "Technology" },
-    { code: "BZ", label: "Business" },
-    { code: "MU", label: "Music" },
+    { code: "TC", label: "General" },
+    { code: "BZ", label: "Fitness" },
+    { code: "MU", label: "Entertainment" },
     { code: "ED", label: "Education" },
   ];
 
+  // Change image depending on login status
+  const currentImage = user ? loggedInImage : heroImage;
+
   return (
     <section className="hero">
-<div className="hero-image">
-  <img src={heroImage} alt="Tukio Hub" />
-</div>
 
-
-
+      <div className="hero-image">
+        <img
+          src={currentImage}
+          alt="Tukio Hub"
+        />
+      </div>
 
       <div>
         <span className="eyebrow">
@@ -26,8 +33,9 @@ function Home() {
         </span>
 
         <h1>
-          From planning and registration to managing
-          attendees, everything you need is in one place.
+          {user
+            ? `Welcome back, ${user.name || "to Tukio Hub"}.Ona NANI!`
+            : "From planning and registration to managing attendees, everything you need is in one place."}
         </h1>
 
         <Link className="primary" to="/events">
@@ -35,6 +43,7 @@ function Home() {
         </Link>
       </div>
 
+            {user && (
       <div className="hero-card">
         <div className="board-head">
           <span>CATEGORY</span>
@@ -57,6 +66,8 @@ function Home() {
           </div>
         ))}
       </div>
+
+      )}
     </section>
   );
 }

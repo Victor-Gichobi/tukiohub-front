@@ -176,12 +176,15 @@ footer {
 .hero p { color: var(--muted); font-size: 1.05rem; max-width: 42ch; }
 
 .hero-card {
+ width: 100%;
+ grid-column: 1 / -1;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
 }
 .board-head {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 12px 18px;
@@ -445,3 +448,4 @@ footer {
   border-radius: 12px;
   display: block;
 }
+

@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Registrations from "./pages/Registrations";
 import Admin from "./pages/Admin";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const [user, setUser] = useState(() =>
@@ -27,20 +28,25 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home />}
+          element={<Home user={user} />}
         />
 
-        <Route
+       <Route
           path="/events"
-          element={<Events />}
+          element={
+              <ProtectedRoute user={user}>
+              <Events />
+                </ProtectedRoute>}
         />
 
-        <Route
-          path="/events/:id"
-          element={
+            <Route
+            path="/events/:id"
+            element={
+          <ProtectedRoute user={user}>
             <EventDetails user={user} />
-          }
-        />
+          </ProtectedRoute>
+  }
+/>
 
         <Route
           path="/login"
@@ -73,6 +79,8 @@ function App() {
     </Layout>
   );
 }
+
+
 
 export default App;
 

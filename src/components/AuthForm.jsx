@@ -43,7 +43,7 @@ function AuthForm({ type, setUser }) {
     <section className="auth">
       <form className="auth-card" onSubmit={submit}>
         <span className="eyebrow">
-          {login ? "WELCOME BACK" : "GET STARTED"}
+          {login ? " BACK" : "GET STARTED"}
         </span>
 
         <h2>

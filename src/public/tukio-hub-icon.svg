@@ -1,0 +1,35 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="200" height="200" rx="40" fill="url(#bgGrad2)"/>
+
+  <!-- outer ring badge -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="url(#ringGrad)" stroke-width="8"/>
+
+  <!-- orange accent notch on ring -->
+  <path d="M100 20 A80 80 0 0 1 155 43" fill="none" stroke="#FB923C" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- interlocked T + K, single stroke weight, rounded -->
+  <g fill="none" stroke="#F8FAFC" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <!-- T -->
+    <path d="M58 62 H100"/>
+    <path d="M79 62 V132"/>
+    <!-- K -->
+    <path d="M118 62 V132"/>
+    <path d="M142 62 L118 97"/>
+    <path d="M118 97 L142 132"/>
+  </g>
+
+  <!-- accent dot -->
+  <circle cx="79" cy="146" r="7" fill="#FB923C"/>
+</svg>
