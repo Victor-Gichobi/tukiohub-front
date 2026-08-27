@@ -21,7 +21,7 @@ function AuthForm({ type, setUser }) {
 
     try {
       const { data } = await api.post(
-        `/auth/${login ? "login" : "register"}`,
+        `/api/auth/${login ? "login" : "register"}`,
         form
       );
 
@@ -43,7 +43,7 @@ function AuthForm({ type, setUser }) {
     <section className="auth">
       <form className="auth-card" onSubmit={submit}>
         <span className="eyebrow">
-          {login ? " BACK" : "GET STARTED"}
+          {login ? "BACK" : "GET STARTED"}
         </span>
 
         <h2>
@@ -109,9 +109,7 @@ function AuthForm({ type, setUser }) {
             ? "No account? "
             : "Already have an account? "}
 
-          <Link
-            to={login ? "/register" : "/login"}
-          >
+          <Link to={login ? "/register" : "/login"}>
             {login ? "Register" : "Login"}
           </Link>
         </p>
