@@ -8,7 +8,7 @@ function Registrations() {
 
   useEffect(() => {
     api
-      .get("/registrations/my")
+      .get("/api/registrations/my")
       .then((r) => {
         setItems(r.data);
       })
@@ -23,7 +23,7 @@ function Registrations() {
   async function cancel(id) {
     try {
       await api.patch(
-        `/registrations/${id}/cancel`
+        `/api/registrations/${id}/cancel`
       );
 
       setItems(

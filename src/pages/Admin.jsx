@@ -20,7 +20,7 @@ function Admin() {
   // Load all events
   async function load() {
     try {
-      const { data } = await api.get("/events");
+      const { data } = await api.get("/api/events");
       setEvents(data);
     } catch (error) {
       console.error("Failed to load events:", error);
@@ -43,10 +43,10 @@ function Admin() {
 
     try {
       if (editing) {
-        await api.put(`/events/${editing}`, form);
+        await api.put(`/api/events/${editing}`, form);
         setMessage("Event updated successfully.");
       } else {
-        await api.post("/events", form);
+        await api.post("/api/events", form);
         setMessage("Event created successfully.");
       }
 
@@ -71,7 +71,7 @@ function Admin() {
     }
 
     try {
-      await api.delete(`/events/${id}`);
+      await api.delete(`/api/events/${id}`);
 
       setMessage("Event deleted successfully.");
 

@@ -11,7 +11,7 @@ function EventDetails({ user }) {
 
   useEffect(() => {
     api
-      .get(`/events/${id}`)
+      .get(`/api/events/${id}`)
       .then((r) => {
         setEvent(r.data);
       })
@@ -32,7 +32,7 @@ function EventDetails({ user }) {
   }
 
   try {
-    const { data } = await api.post("/registrations", {
+    const { data } = await api.post("/api/registrations", {
       event: id,
     });
 

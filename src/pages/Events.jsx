@@ -8,7 +8,7 @@ function Events() {
 
   useEffect(() => {
     api
-      .get("/events")
+      .get("/api/events")
       .then((r) => {
         setEvents(r.data);
       })
